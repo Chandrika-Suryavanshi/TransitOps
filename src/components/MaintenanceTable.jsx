@@ -1,75 +1,122 @@
-function MaintenanceTable() {
-  return (
-    <div>
-      <h3>Maintenance Records</h3>
+function MaintenanceTable(){
 
-      <table
-        border="1"
-        cellPadding="10"
-        width="100%"
-      >
-        <thead>
-          <tr>
-            <th>Vehicle No.</th>
-            <th>Maintenance Type</th>
-            <th>Date</th>
-            <th>Cost</th>
-            <th>Description</th>
-            <th>Action</th>
-          </tr>
-        </thead>
+const maintenance=[
 
-        <tbody>
+{
+vehicle:"VAN-05",
+issue:"Engine Service",
+date:"12 July 2026",
+technician:"AutoCare",
+status:"Completed"
+},
 
-          <tr>
-            <td>MP04AB1234</td>
-            <td>Engine Service</td>
-            <td>12-07-2026</td>
-            <td>₹5000</td>
-            <td>Oil change and engine check</td>
-            <td>
-              <button>Edit</button>
+{
+vehicle:"TRUCK-11",
+issue:"Brake Repair",
+date:"15 July 2026",
+technician:"Fleet Service",
+status:"In Progress"
+},
 
-              <button style={{ marginLeft: "10px" }}>
-                Delete
-              </button>
-            </td>
-          </tr>
+{
+vehicle:"MINI-03",
+issue:"Oil Change",
+date:"20 July 2026",
+technician:"QuickFix",
+status:"Scheduled"
+}
 
-          <tr>
-            <td>MP20CD5678</td>
-            <td>Tyre Replacement</td>
-            <td>15-07-2026</td>
-            <td>₹8000</td>
-            <td>Changed front tyres</td>
-            <td>
-              <button>Edit</button>
+];
 
-              <button style={{ marginLeft: "10px" }}>
-                Delete
-              </button>
-            </td>
-          </tr>
 
-          <tr>
-            <td>MP09EF4321</td>
-            <td>Brake Service</td>
-            <td>18-07-2026</td>
-            <td>₹3000</td>
-            <td>Brake pad replacement</td>
-            <td>
-              <button>Edit</button>
+return(
 
-              <button style={{ marginLeft: "10px" }}>
-                Delete
-              </button>
-            </td>
-          </tr>
+<table
+style={{
+width:"100%",
+borderCollapse:"collapse",
+color:"white"
+}}
+>
 
-        </tbody>
-      </table>
-    </div>
-  );
+
+<thead>
+
+<tr
+style={{
+background:"#1e1e1e"
+}}
+>
+
+<th>Vehicle</th>
+<th>Issue</th>
+<th>Date</th>
+<th>Technician</th>
+<th>Status</th>
+
+</tr>
+
+</thead>
+
+
+<tbody>
+
+{
+maintenance.map((m,index)=>(
+
+<tr
+key={index}
+style={{
+borderBottom:"1px solid #333"
+}}
+>
+
+<td>{m.vehicle}</td>
+
+<td>{m.issue}</td>
+
+<td>{m.date}</td>
+
+<td>{m.technician}</td>
+
+
+<td>
+
+<span
+style={{
+background:
+m.status==="Completed"
+?"green"
+:
+m.status==="In Progress"
+?"orange"
+:"blue",
+
+padding:"5px 12px",
+borderRadius:"15px"
+}}
+>
+
+{m.status}
+
+</span>
+
+</td>
+
+
+</tr>
+
+))
+}
+
+
+</tbody>
+
+
+</table>
+
+)
+
 }
 
 export default MaintenanceTable;
