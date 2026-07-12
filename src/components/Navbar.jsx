@@ -1,31 +1,44 @@
+import SearchBar from "./SearchBar";
+
 function Navbar() {
   return (
-    <nav
+    <div
       style={{
         height: "60px",
-        background: "#1a1a1a",
-        color: "white",
+        background: "#181818",
+        borderBottom: "1px solid #333",
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
         padding: "0 20px",
       }}
     >
-      <h2>TransitOps</h2>
+      <SearchBar />
 
-      <input
-        type="text"
-        placeholder="Search..."
+      <div
         style={{
-          width: "250px",
-          padding: "8px",
+          display: "flex",
+          alignItems: "center",
+          gap: "15px",
         }}
-      />
+      >
+        <span style={{ color: "white" }}>
+          Raven K.
+        </span>
 
-      <div>
-        <span>👤 Admin</span>
+        <button
+          style={{
+            background: "#2f80ed",
+            color: "white",
+            border: "none",
+            padding: "8px 16px",
+            borderRadius: "20px",
+          }}
+        >
+          Dispatcher
+        </button>
       </div>
-    </nav>
+    </div>
   );
 }
 

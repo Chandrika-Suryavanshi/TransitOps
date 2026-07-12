@@ -1,83 +1,120 @@
-function TripTable() {
-  return (
-    <div>
-      <h3>Trip List</h3>
+function TripTable(){
 
-      <table
-        border="1"
-        cellPadding="10"
-        width="100%"
-      >
-        <thead>
-          <tr>
-            <th>Trip ID</th>
-            <th>Source</th>
-            <th>Destination</th>
-            <th>Driver</th>
-            <th>Vehicle</th>
-            <th>Date</th>
-            <th>Status</th>
-            <th>Action</th>
-          </tr>
-        </thead>
+const trips=[
 
-        <tbody>
+{
+id:"TR-101",
+vehicle:"VAN-05",
+driver:"Rahul Sharma",
+route:"Bhopal → Indore",
+status:"Active"
+},
 
-          <tr>
-            <td>T001</td>
-            <td>Jabalpur</td>
-            <td>Bhopal</td>
-            <td>Rahul Sharma</td>
-            <td>MP04AB1234</td>
-            <td>12-07-2026</td>
-            <td>Running</td>
-            <td>
-              <button>Edit</button>
+{
+id:"TR-102",
+vehicle:"TRUCK-11",
+driver:"Amit Verma",
+route:"Jabalpur → Pune",
+status:"Pending"
+},
 
-              <button style={{ marginLeft: "10px" }}>
-                Delete
-              </button>
-            </td>
-          </tr>
+{
+id:"TR-103",
+vehicle:"MINI-03",
+driver:"Priya Singh",
+route:"Delhi → Jaipur",
+status:"Completed"
+}
 
-          <tr>
-            <td>T002</td>
-            <td>Indore</td>
-            <td>Ujjain</td>
-            <td>Amit Verma</td>
-            <td>MP20CD5678</td>
-            <td>13-07-2026</td>
-            <td>Completed</td>
-            <td>
-              <button>Edit</button>
+];
 
-              <button style={{ marginLeft: "10px" }}>
-                Delete
-              </button>
-            </td>
-          </tr>
 
-          <tr>
-            <td>T003</td>
-            <td>Gwalior</td>
-            <td>Sagar</td>
-            <td>Rohit Singh</td>
-            <td>MP09EF4321</td>
-            <td>14-07-2026</td>
-            <td>Scheduled</td>
-            <td>
-              <button>Edit</button>
+return(
 
-              <button style={{ marginLeft: "10px" }}>
-                Delete
-              </button>
-            </td>
-          </tr>
+<table
 
-        </tbody>
-      </table>
-    </div>
-  );
+style={{
+width:"100%",
+borderCollapse:"collapse",
+color:"white"
+}}
+
+>
+
+
+<thead>
+
+<tr style={{background:"#1e1e1e"}}>
+
+<th>Trip ID</th>
+<th>Vehicle</th>
+<th>Driver</th>
+<th>Route</th>
+<th>Status</th>
+
+</tr>
+
+</thead>
+
+
+
+<tbody>
+
+{
+trips.map((trip,index)=>(
+
+<tr
+key={index}
+style={{
+borderBottom:"1px solid #333"
+}}
+>
+
+<td>{trip.id}</td>
+
+<td>{trip.vehicle}</td>
+
+<td>{trip.driver}</td>
+
+<td>{trip.route}</td>
+
+<td>
+
+<span
+style={{
+background:
+trip.status==="Active"
+?"green"
+:
+trip.status==="Pending"
+?"orange"
+:"blue",
+
+padding:"5px 12px",
+borderRadius:"15px"
+}}
+>
+
+{trip.status}
+
+</span>
+
+</td>
+
+
+</tr>
+
+))
+}
+
+
+</tbody>
+
+
+</table>
+
+)
+
 }
 
 export default TripTable;

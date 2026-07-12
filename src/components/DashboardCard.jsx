@@ -2,14 +2,22 @@ function DashboardCard({ title, value }) {
   return (
     <div
       style={{
-        width: "180px",
-        padding: "20px",
-        border: "1px solid gray",
+        width: "170px",
+        background: "#1e1e1e",
+        color: "white",
+        border: "1px solid #444",
         borderRadius: "8px",
-        background: "#f5f5f5",
+        padding: "15px",
       }}
     >
-      <h4>{title}</h4>
+      <p
+        style={{
+          color: "#9e9e9e",
+          fontSize: "13px",
+        }}
+      >
+        {title}
+      </p>
 
       <h2>{value}</h2>
     </div>

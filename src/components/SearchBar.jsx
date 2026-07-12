@@ -4,11 +4,13 @@ function SearchBar() {
       type="text"
       placeholder="Search..."
       style={{
-        width: "300px",
-        padding: "10px",
-        borderRadius: "5px",
-        border: "1px solid #ccc",
-        marginBottom: "20px",
+        width: "250px",
+        padding: "8px 12px",
+        borderRadius: "6px",
+        border: "1px solid #555",
+        background: "#1f1f1f",
+        color: "white",
+        outline: "none",
       }}
     />
   );
