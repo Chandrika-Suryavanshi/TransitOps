@@ -1,17 +1,17 @@
 import LoginForm from "../components/LoginForm";
 
-function Login() {
+function Login({ setPage }) {
   return (
     <div
       style={{
+        height: "100vh",
+        background: "#111",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        height: "100vh",
-        backgroundColor: "#f5f5f5",
       }}
     >
-      <LoginForm />
+      <LoginForm setPage={setPage} />
     </div>
   );
 }

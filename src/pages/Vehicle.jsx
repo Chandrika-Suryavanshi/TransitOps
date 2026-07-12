@@ -1,16 +1,18 @@
-import VehicleForm from "../components/VehicleForm";
-import VehicleTable from "../components/VehicleTable";
+import Navbar from "../components/Navbar";
+import Sidebar from "../components/Sidebar";
 
-function Vehicle() {
+function Vehicle({ setPage }) {
   return (
-    <div style={{ padding: "20px" }}>
-      <h2>Vehicle Management</h2>
+    <div style={{ display: "flex" }}>
+      <Sidebar setPage={setPage} />
 
-      <VehicleForm />
+      <div style={{ flex: 1 }}>
+        <Navbar />
 
-      <br />
-
-      <VehicleTable />
+        <div style={{ padding: "20px" }}>
+          <h1>Vehicle Registry</h1>
+        </div>
+      </div>
     </div>
   );
 }

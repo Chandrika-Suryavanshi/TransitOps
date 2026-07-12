@@ -1,16 +1,18 @@
-import MaintenanceForm from "../components/MaintenanceForm";
-import MaintenanceTable from "../components/MaintenanceTable";
+import Navbar from "../components/Navbar";
+import Sidebar from "../components/Sidebar";
 
-function Maintenance() {
+function Maintenance({ setPage }) {
   return (
-    <div style={{ padding: "20px" }}>
-      <h2>Maintenance Management</h2>
+    <div style={{ display: "flex" }}>
+      <Sidebar setPage={setPage} />
 
-      <MaintenanceForm />
+      <div style={{ flex: 1 }}>
+        <Navbar />
 
-      <br />
-
-      <MaintenanceTable />
+        <div style={{ padding: "20px" }}>
+          <h1>Maintenance</h1>
+        </div>
+      </div>
     </div>
   );
 }

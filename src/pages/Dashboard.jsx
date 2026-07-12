@@ -1,35 +1,38 @@
+import Navbar from "../components/Navbar";
+import Sidebar from "../components/Sidebar";
 import DashboardCard from "../components/DashboardCard";
 
-function Dashboard() {
+function Dashboard({ setPage }) {
   return (
-    <div>
+    <div style={{ display: "flex", height: "100vh" }}>
+      <Sidebar setPage={setPage} />
 
-      <h1>Dashboard</h1>
+      <div style={{ flex: 1 }}>
 
-      <div className="cards">
+        <Navbar />
 
-        <DashboardCard
-          title="Drivers"
-          value="20"
-        />
+        <div style={{ padding: "20px" }}>
 
-        <DashboardCard
-          title="Vehicles"
-          value="15"
-        />
+          <h2>Dashboard</h2>
 
-        <DashboardCard
-          title="Trips"
-          value="8"
-        />
+          <div
+            style={{
+              display: "flex",
+              gap: "15px",
+              flexWrap: "wrap",
+            }}
+          >
+            <DashboardCard title="Active Vehicles" value="53" />
+            <DashboardCard title="Available Vehicles" value="42" />
+            <DashboardCard title="Maintenance" value="05" />
+            <DashboardCard title="Trips" value="18" />
+            <DashboardCard title="Drivers" value="26" />
+            <DashboardCard title="Fleet Utilization" value="81%" />
+          </div>
 
-        <DashboardCard
-          title="Maintenance"
-          value="3"
-        />
+        </div>
 
       </div>
-
     </div>
   );
 }

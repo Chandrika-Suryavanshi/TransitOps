@@ -1,16 +1,18 @@
-import TripForm from "../components/TripForm";
-import TripTable from "../components/TripTable";
+import Navbar from "../components/Navbar";
+import Sidebar from "../components/Sidebar";
 
-function Trip() {
+function Trip({ setPage }) {
   return (
-    <div style={{ padding: "20px" }}>
-      <h2>Trip Management</h2>
+    <div style={{ display: "flex" }}>
+      <Sidebar setPage={setPage} />
 
-      <TripForm />
+      <div style={{ flex: 1 }}>
+        <Navbar />
 
-      <br />
-
-      <TripTable />
+        <div style={{ padding: "20px" }}>
+          <h1>Trip Dispatcher</h1>
+        </div>
+      </div>
     </div>
   );
 }

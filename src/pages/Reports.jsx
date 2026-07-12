@@ -1,16 +1,20 @@
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 
-function Driver({ setPage }) {
+function Reports({ setPage }) {
   return (
     <div style={{ display: "flex" }}>
       <Sidebar setPage={setPage} />
+
       <div style={{ flex: 1 }}>
         <Navbar />
-        <h1 style={{ padding: "20px" }}>Driver Management</h1>
+
+        <div style={{ padding: "20px" }}>
+          <h1>Reports & Analytics</h1>
+        </div>
       </div>
     </div>
   );
 }
 
-export default Driver;
+export default Reports;

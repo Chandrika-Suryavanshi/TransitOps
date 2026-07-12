@@ -1,42 +1,95 @@
-import Button from "./Button";
+function LoginForm({ setPage }) {
+  const handleLogin = (e) => {
+    e.preventDefault();
 
-function LoginForm() {
+    // Navigate to Dashboard
+    setPage("dashboard");
+  };
+
   return (
     <div
       style={{
-        width: "350px",
-        padding: "30px",
-        border: "1px solid #ddd",
-        borderRadius: "10px",
-        background: "#fff",
-        boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
+        width: "420px",
+        backgroundColor: "#1a1a1a",
+        padding: "40px",
+        borderRadius: "12px",
+        boxShadow: "0 0 15px rgba(0,0,0,0.4)",
+        color: "white",
       }}
     >
-      <h2 style={{ textAlign: "center" }}>TransitOps Login</h2>
+      <h1 style={{ marginBottom: "5px" }}>Sign In</h1>
 
-      <input
-        type="email"
-        placeholder="Email"
-        style={inputStyle}
-      />
+      <p style={{ color: "#bdbdbd", marginBottom: "25px" }}>
+        Enter your credentials
+      </p>
 
-      <input
-        type="password"
-        placeholder="Password"
-        style={inputStyle}
-      />
+      <form onSubmit={handleLogin}>
+        <label>Email</label>
+        <br />
+        <input
+          type="email"
+          placeholder="Enter Email"
+          style={{
+            width: "100%",
+            padding: "10px",
+            marginTop: "5px",
+            marginBottom: "18px",
+            borderRadius: "6px",
+            border: "1px solid #555",
+          }}
+        />
 
-      <Button text="Login" />
+        <label>Password</label>
+        <br />
+        <input
+          type="password"
+          placeholder="Enter Password"
+          style={{
+            width: "100%",
+            padding: "10px",
+            marginTop: "5px",
+            marginBottom: "18px",
+            borderRadius: "6px",
+            border: "1px solid #555",
+          }}
+        />
+
+        <label>Role</label>
+        <br />
+        <select
+          style={{
+            width: "100%",
+            padding: "10px",
+            marginTop: "5px",
+            marginBottom: "25px",
+            borderRadius: "6px",
+            border: "1px solid #555",
+          }}
+        >
+          <option>Fleet Manager</option>
+          <option>Dispatcher</option>
+          <option>Safety Officer</option>
+          <option>Financial Analyst</option>
+        </select>
+
+        <button
+          type="submit"
+          style={{
+            width: "100%",
+            padding: "12px",
+            backgroundColor: "#d48b06",
+            color: "white",
+            border: "none",
+            borderRadius: "6px",
+            cursor: "pointer",
+            fontSize: "16px",
+          }}
+        >
+          Sign In
+        </button>
+      </form>
     </div>
   );
 }
-
-const inputStyle = {
-  width: "100%",
-  padding: "10px",
-  marginBottom: "15px",
-  borderRadius: "5px",
-  border: "1px solid #ccc",
-};
 
 export default LoginForm;
