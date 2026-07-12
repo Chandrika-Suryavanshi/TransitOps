@@ -1,67 +1,26 @@
-function DriverForm() {
-  return (
-    <div
-      style={{
-        border: "1px solid #ccc",
-        padding: "20px",
-        borderRadius: "8px",
-        marginBottom: "20px",
-      }}
-    >
-      <h3>Add Driver</h3>
+function DriverForm(){
 
-      <form>
-        <input
-          type="text"
-          placeholder="Driver Name"
-          style={inputStyle}
-        />
+return(
 
-        <input
-          type="text"
-          placeholder="Phone Number"
-          style={inputStyle}
-        />
+<div>
 
-        <input
-          type="text"
-          placeholder="License Number"
-          style={inputStyle}
-        />
+<button
+style={{
+background:"#d89000",
+color:"white",
+border:"none",
+padding:"10px 18px",
+borderRadius:"6px",
+cursor:"pointer"
+}}
+>
++ Add Driver
+</button>
 
-        <input
-          type="text"
-          placeholder="Address"
-          style={inputStyle}
-        />
+</div>
 
-        <select style={inputStyle}>
-          <option>Available</option>
-          <option>On Trip</option>
-          <option>Inactive</option>
-        </select>
+)
 
-        <button style={buttonStyle}>
-          Add Driver
-        </button>
-      </form>
-    </div>
-  );
 }
-
-const inputStyle = {
-  width: "100%",
-  padding: "10px",
-  marginBottom: "12px",
-};
-
-const buttonStyle = {
-  padding: "10px 20px",
-  background: "#ff9800",
-  color: "white",
-  border: "none",
-  borderRadius: "5px",
-  cursor: "pointer",
-};
 
 export default DriverForm;

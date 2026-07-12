@@ -1,72 +1,62 @@
 function VehicleTable() {
   return (
-    <div>
-      <h3>Vehicle List</h3>
-
-      <table
-        border="1"
-        cellPadding="10"
-        width="100%"
+    <table
+      border="1"
+      cellPadding="10"
+      style={{
+        width: "100%",
+        borderCollapse: "collapse",
+      }}
+    >
+      <thead
+        style={{
+          backgroundColor: "#222",
+          color: "white",
+        }}
       >
-        <thead>
-          <tr>
-            <th>Vehicle No.</th>
-            <th>Type</th>
-            <th>Brand</th>
-            <th>Model</th>
-            <th>Status</th>
-            <th>Action</th>
-          </tr>
-        </thead>
+        <tr>
+          <th>Registration No.</th>
+          <th>Name / Model</th>
+          <th>Type</th>
+          <th>Capacity</th>
+          <th>Odometer</th>
+          <th>Cost</th>
+          <th>Status</th>
+        </tr>
+      </thead>
 
-        <tbody>
-          <tr>
-            <td>MP04AB1234</td>
-            <td>Bus</td>
-            <td>Tata</td>
-            <td>Starbus</td>
-            <td>Available</td>
-            <td>
-              <button>Edit</button>
+      <tbody>
+        <tr>
+          <td>MP09AB1234</td>
+          <td>Tata Ace</td>
+          <td>Mini Truck</td>
+          <td>750 kg</td>
+          <td>52,000 km</td>
+          <td>₹6,50,000</td>
+          <td>Available</td>
+        </tr>
 
-              <button style={{ marginLeft: "10px" }}>
-                Delete
-              </button>
-            </td>
-          </tr>
+        <tr>
+          <td>MP20CD5678</td>
+          <td>Ashok Leyland</td>
+          <td>Truck</td>
+          <td>8 Ton</td>
+          <td>1,20,000 km</td>
+          <td>₹28,00,000</td>
+          <td>On Trip</td>
+        </tr>
 
-          <tr>
-            <td>MP20CD5678</td>
-            <td>Truck</td>
-            <td>Ashok Leyland</td>
-            <td>Dost</td>
-            <td>On Trip</td>
-            <td>
-              <button>Edit</button>
-
-              <button style={{ marginLeft: "10px" }}>
-                Delete
-              </button>
-            </td>
-          </tr>
-
-          <tr>
-            <td>MP09EF4321</td>
-            <td>Car</td>
-            <td>Mahindra</td>
-            <td>Bolero</td>
-            <td>Maintenance</td>
-            <td>
-              <button>Edit</button>
-
-              <button style={{ marginLeft: "10px" }}>
-                Delete
-              </button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+        <tr>
+          <td>MP15EF1122</td>
+          <td>Mahindra Bolero</td>
+          <td>Pickup</td>
+          <td>1.5 Ton</td>
+          <td>78,500 km</td>
+          <td>₹10,20,000</td>
+          <td>Maintenance</td>
+        </tr>
+      </tbody>
+    </table>
   );
 }
 

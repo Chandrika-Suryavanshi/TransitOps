@@ -1,19 +1,25 @@
 function StatusBadge({ status }) {
-  let color = "#999";
 
-  if (status === "Available") color = "green";
-  else if (status === "On Trip") color = "orange";
-  else if (status === "Maintenance") color = "red";
-  else if (status === "Completed") color = "blue";
+  let color = "#4caf50";
+
+  if(status === "On Trip")
+    color = "#2196f3";
+
+  if(status === "In Shop")
+    color = "#ff9800";
+
+  if(status === "Retired")
+    color = "#f44336";
+
 
   return (
     <span
       style={{
-        backgroundColor: color,
-        color: "white",
-        padding: "5px 10px",
-        borderRadius: "15px",
-        fontSize: "12px",
+        background: color,
+        color:"white",
+        padding:"5px 12px",
+        borderRadius:"15px",
+        fontSize:"12px"
       }}
     >
       {status}

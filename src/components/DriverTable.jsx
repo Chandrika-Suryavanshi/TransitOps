@@ -1,81 +1,125 @@
-function DriverTable() {
-  return (
-    <div>
-      <h3>Driver List</h3>
+function DriverTable(){
 
-      <table
-        border="1"
-        cellPadding="10"
-        width="100%"
-      >
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Phone</th>
-            <th>License</th>
-            <th>Status</th>
-            <th>Action</th>
-          </tr>
-        </thead>
+const drivers=[
 
-        <tbody>
-          <tr>
-            <td>Rahul Sharma</td>
-            <td>9876543210</td>
-            <td>MP09-12345</td>
-            <td>Available</td>
-            <td>
-              <button>Edit</button>
+{
+name:"Rahul Sharma",
+license:"MP123456",
+phone:"9876543210",
+experience:"5 Years",
+status:"Available"
+},
 
-              <button
-                style={{
-                  marginLeft: "10px",
-                }}
-              >
-                Delete
-              </button>
-            </td>
-          </tr>
+{
+name:"Amit Verma",
+license:"MP789012",
+phone:"8765432109",
+experience:"8 Years",
+status:"On Trip"
+},
 
-          <tr>
-            <td>Amit Verma</td>
-            <td>9876543201</td>
-            <td>MP20-54321</td>
-            <td>On Trip</td>
-            <td>
-              <button>Edit</button>
+{
+name:"Priya Singh",
+license:"MP456789",
+phone:"7654321098",
+experience:"3 Years",
+status:"Leave"
+}
 
-              <button
-                style={{
-                  marginLeft: "10px",
-                }}
-              >
-                Delete
-              </button>
-            </td>
-          </tr>
+];
 
-          <tr>
-            <td>Rohit Singh</td>
-            <td>9876543299</td>
-            <td>MP04-78945</td>
-            <td>Inactive</td>
-            <td>
-              <button>Edit</button>
 
-              <button
-                style={{
-                  marginLeft: "10px",
-                }}
-              >
-                Delete
-              </button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  );
+return(
+
+<table
+
+style={{
+width:"100%",
+borderCollapse:"collapse",
+color:"white"
+}}
+
+>
+
+
+<thead>
+
+<tr
+style={{
+background:"#1e1e1e"
+}}
+>
+
+<th>Name</th>
+<th>License No.</th>
+<th>Phone</th>
+<th>Experience</th>
+<th>Status</th>
+
+</tr>
+
+</thead>
+
+
+
+<tbody>
+
+
+{
+drivers.map((driver,index)=>(
+
+<tr
+key={index}
+style={{
+borderBottom:"1px solid #333"
+}}
+>
+
+<td>{driver.name}</td>
+
+<td>{driver.license}</td>
+
+<td>{driver.phone}</td>
+
+<td>{driver.experience}</td>
+
+<td>
+
+<span
+style={{
+background:
+driver.status==="Available"
+?"green"
+:
+driver.status==="On Trip"
+?"blue"
+:"orange",
+
+padding:"5px 12px",
+borderRadius:"15px"
+}}
+>
+
+{driver.status}
+
+</span>
+
+</td>
+
+
+</tr>
+
+))
+}
+
+
+</tbody>
+
+
+</table>
+
+)
+
 }
 
 export default DriverTable;
