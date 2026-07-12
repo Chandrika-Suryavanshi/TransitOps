@@ -3,8 +3,8 @@ import DriverTable from "../components/DriverTable";
 
 function Driver() {
   return (
-    <div>
-      <h1>Driver Management</h1>
+    <div style={{ padding: "20px" }}>
+      <h2>Driver Management</h2>
 
       <DriverForm />
 

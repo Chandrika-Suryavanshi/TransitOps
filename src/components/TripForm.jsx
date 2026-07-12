@@ -1,26 +1,76 @@
-function TripForm(){
+function TripForm() {
+  return (
+    <div
+      style={{
+        border: "1px solid #ccc",
+        padding: "20px",
+        borderRadius: "8px",
+        marginBottom: "20px",
+      }}
+    >
+      <h3>Create Trip</h3>
 
-  return(
-    <form>
+      <form>
 
-      <input placeholder="Source"/>
+        <input
+          type="text"
+          placeholder="Trip ID"
+          style={inputStyle}
+        />
 
-      <br/><br/>
+        <input
+          type="text"
+          placeholder="Source"
+          style={inputStyle}
+        />
 
-      <input placeholder="Destination"/>
+        <input
+          type="text"
+          placeholder="Destination"
+          style={inputStyle}
+        />
 
-      <br/><br/>
+        <select style={inputStyle}>
+          <option>Select Driver</option>
+          <option>Rahul Sharma</option>
+          <option>Amit Verma</option>
+          <option>Rohit Singh</option>
+        </select>
 
-      <input placeholder="Driver Name"/>
+        <select style={inputStyle}>
+          <option>Select Vehicle</option>
+          <option>MP04AB1234</option>
+          <option>MP20CD5678</option>
+          <option>MP09EF4321</option>
+        </select>
 
-      <br/><br/>
+        <input
+          type="date"
+          style={inputStyle}
+        />
 
-      <button>
-        Create Trip
-      </button>
+        <button style={buttonStyle}>
+          Create Trip
+        </button>
 
-    </form>
+      </form>
+    </div>
   );
 }
+
+const inputStyle = {
+  width: "100%",
+  padding: "10px",
+  marginBottom: "12px",
+};
+
+const buttonStyle = {
+  padding: "10px 20px",
+  background: "#ff9800",
+  color: "white",
+  border: "none",
+  borderRadius: "5px",
+  cursor: "pointer",
+};
 
 export default TripForm;

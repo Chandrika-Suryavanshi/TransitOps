@@ -1,7 +1,7 @@
-function VehicleTable() {
+function MaintenanceTable() {
   return (
     <div>
-      <h3>Vehicle List</h3>
+      <h3>Maintenance Records</h3>
 
       <table
         border="1"
@@ -11,21 +11,22 @@ function VehicleTable() {
         <thead>
           <tr>
             <th>Vehicle No.</th>
-            <th>Type</th>
-            <th>Brand</th>
-            <th>Model</th>
-            <th>Status</th>
+            <th>Maintenance Type</th>
+            <th>Date</th>
+            <th>Cost</th>
+            <th>Description</th>
             <th>Action</th>
           </tr>
         </thead>
 
         <tbody>
+
           <tr>
             <td>MP04AB1234</td>
-            <td>Bus</td>
-            <td>Tata</td>
-            <td>Starbus</td>
-            <td>Available</td>
+            <td>Engine Service</td>
+            <td>12-07-2026</td>
+            <td>₹5000</td>
+            <td>Oil change and engine check</td>
             <td>
               <button>Edit</button>
 
@@ -37,10 +38,10 @@ function VehicleTable() {
 
           <tr>
             <td>MP20CD5678</td>
-            <td>Truck</td>
-            <td>Ashok Leyland</td>
-            <td>Dost</td>
-            <td>On Trip</td>
+            <td>Tyre Replacement</td>
+            <td>15-07-2026</td>
+            <td>₹8000</td>
+            <td>Changed front tyres</td>
             <td>
               <button>Edit</button>
 
@@ -52,10 +53,10 @@ function VehicleTable() {
 
           <tr>
             <td>MP09EF4321</td>
-            <td>Car</td>
-            <td>Mahindra</td>
-            <td>Bolero</td>
-            <td>Maintenance</td>
+            <td>Brake Service</td>
+            <td>18-07-2026</td>
+            <td>₹3000</td>
+            <td>Brake pad replacement</td>
             <td>
               <button>Edit</button>
 
@@ -64,10 +65,11 @@ function VehicleTable() {
               </button>
             </td>
           </tr>
+
         </tbody>
       </table>
     </div>
   );
 }
 
-export default VehicleTable;
+export default MaintenanceTable;

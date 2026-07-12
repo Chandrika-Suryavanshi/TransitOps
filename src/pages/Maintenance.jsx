@@ -1,11 +1,16 @@
 import MaintenanceForm from "../components/MaintenanceForm";
+import MaintenanceTable from "../components/MaintenanceTable";
 
 function Maintenance() {
   return (
-    <div>
-      <h1>Maintenance Management</h1>
+    <div style={{ padding: "20px" }}>
+      <h2>Maintenance Management</h2>
 
       <MaintenanceForm />
+
+      <br />
+
+      <MaintenanceTable />
     </div>
   );
 }

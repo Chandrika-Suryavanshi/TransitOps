@@ -1,13 +1,10 @@
 function Navbar() {
   return (
-    <nav>
-      <h2>TransitOps</h2>
+    <nav className="navbar">
+      <h2>🚍 TransitOps</h2>
 
       <div>
-        <span>Dashboard</span>
-        <span>Drivers</span>
-        <span>Vehicles</span>
-        <span>Trips</span>
+        <span>Admin</span>
       </div>
     </nav>
   );

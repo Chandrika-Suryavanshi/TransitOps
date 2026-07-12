@@ -1,58 +1,67 @@
-import { useState } from "react";
-
-function VehicleForm({ addVehicle }) {
-
-  const [vehicle, setVehicle] = useState({
-    number: "",
-    model: "",
-    type: ""
-  });
-
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    addVehicle(vehicle);
-
-    setVehicle({
-      number: "",
-      model: "",
-      type: ""
-    });
-  };
-
-
+function VehicleForm() {
   return (
-    <form onSubmit={handleSubmit}>
+    <div
+      style={{
+        border: "1px solid #ccc",
+        padding: "20px",
+        borderRadius: "8px",
+        marginBottom: "20px",
+      }}
+    >
+      <h3>Add Vehicle</h3>
 
-      <input
-        placeholder="Vehicle Number"
-        value={vehicle.number}
-        onChange={(e)=>setVehicle({...vehicle,number:e.target.value})}
-      />
+      <form>
+        <input
+          type="text"
+          placeholder="Vehicle Number"
+          style={inputStyle}
+        />
 
-      <br/><br/>
+        <input
+          type="text"
+          placeholder="Vehicle Type"
+          style={inputStyle}
+        />
 
-      <input
-        placeholder="Model"
-        value={vehicle.model}
-        onChange={(e)=>setVehicle({...vehicle,model:e.target.value})}
-      />
+        <input
+          type="text"
+          placeholder="Brand"
+          style={inputStyle}
+        />
 
-      <br/><br/>
+        <input
+          type="text"
+          placeholder="Model"
+          style={inputStyle}
+        />
 
-      <input
-        placeholder="Vehicle Type"
-        value={vehicle.type}
-        onChange={(e)=>setVehicle({...vehicle,type:e.target.value})}
-      />
+        <select style={inputStyle}>
+          <option>Available</option>
+          <option>On Trip</option>
+          <option>Maintenance</option>
+        </select>
 
-      <br/><br/>
-
-      <button>Add Vehicle</button>
-
-    </form>
+        <button style={buttonStyle}>
+          Add Vehicle
+        </button>
+      </form>
+    </div>
   );
 }
+
+const inputStyle = {
+  width: "100%",
+  padding: "10px",
+  marginBottom: "12px",
+};
+
+const buttonStyle = {
+  padding: "10px 20px",
+  background: "#ff9800",
+  color: "white",
+  border: "none",
+  borderRadius: "5px",
+  cursor: "pointer",
+};
 
 export default VehicleForm;

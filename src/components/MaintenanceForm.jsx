@@ -1,26 +1,76 @@
-function MaintenanceForm(){
+function MaintenanceForm() {
+  return (
+    <div
+      style={{
+        border: "1px solid #ccc",
+        padding: "20px",
+        borderRadius: "8px",
+        marginBottom: "20px",
+      }}
+    >
+      <h3>Add Maintenance Record</h3>
 
-  return(
-    <form>
+      <form>
 
-      <input placeholder="Vehicle Number"/>
+        <input
+          type="text"
+          placeholder="Vehicle Number"
+          style={inputStyle}
+        />
 
-      <br/><br/>
+        <input
+          type="text"
+          placeholder="Maintenance Type"
+          style={inputStyle}
+        />
 
-      <input placeholder="Problem"/>
+        <input
+          type="date"
+          style={inputStyle}
+        />
 
-      <br/><br/>
+        <input
+          type="number"
+          placeholder="Cost (₹)"
+          style={inputStyle}
+        />
 
-      <input placeholder="Service Date"/>
+        <textarea
+          placeholder="Description"
+          style={textAreaStyle}
+        />
 
-      <br/><br/>
+        <br />
 
-      <button>
-        Add Maintenance
-      </button>
+        <button style={buttonStyle}>
+          Save Record
+        </button>
 
-    </form>
+      </form>
+    </div>
   );
 }
+
+const inputStyle = {
+  width: "100%",
+  padding: "10px",
+  marginBottom: "12px",
+};
+
+const textAreaStyle = {
+  width: "100%",
+  height: "80px",
+  padding: "10px",
+  marginBottom: "12px",
+};
+
+const buttonStyle = {
+  padding: "10px 20px",
+  background: "#ff9800",
+  color: "white",
+  border: "none",
+  borderRadius: "5px",
+  cursor: "pointer",
+};
 
 export default MaintenanceForm;

@@ -1,23 +1,16 @@
-import { useState } from "react";
 import VehicleForm from "../components/VehicleForm";
 import VehicleTable from "../components/VehicleTable";
 
 function Vehicle() {
-  const [vehicles, setVehicles] = useState([]);
-
-  const addVehicle = (vehicle) => {
-    setVehicles([...vehicles, vehicle]);
-  };
-
   return (
-    <div>
-      <h1>Vehicle Management</h1>
+    <div style={{ padding: "20px" }}>
+      <h2>Vehicle Management</h2>
 
-      <VehicleForm addVehicle={addVehicle} />
+      <VehicleForm />
 
       <br />
 
-      <VehicleTable vehicles={vehicles} />
+      <VehicleTable />
     </div>
   );
 }
